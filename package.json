@@ -1,27 +1,26 @@
 {
-  "name": "js-template",
+  "name": "time-systems",
   "version": "0.1.0",
-  "description": "javascript npm package template",
+  "description": "time utilities for various systems used in astrodynamics",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brandon-sexton/js-template.git"
+    "url": "git+https://github.com/brandon-sexton/time-systems.git"
   },
   "keywords": [
-    "javascript",
-    "npm",
-    "package",
-    "template"
+    "time",
+    "astrodynamics"
   ],
   "author": "Brandon Sexton",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/brandon-sexton/js-template/issues"
+    "url": "https://github.com/brandon-sexton/time-systems/issues"
   },
-  "homepage": "https://github.com/brandon-sexton/js-template#readme",
+  "homepage": "https://github.com/brandon-sexton/time-systems#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.23.7",
     "eslint": "^8.56.0",
