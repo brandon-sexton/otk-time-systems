@@ -4,6 +4,7 @@ import {
   julianUTCtoTT,
   julianTTtoUTC,
 } from './conversions';
+import {J2000, JD_RECIPROCAL_4} from './constants';
 /**
  * Epoch
  * @class Epoch
@@ -67,5 +68,17 @@ export class Epoch {
   plusDays(days) {
     this.julianTT += days;
     return this;
+  }
+
+  /**
+   * Returns the number of Julian centuries past J2000.
+   * @return {number} the number of Julian centuries past J2000.
+   * @example
+   * const epoch = new Epoch('2018-08-08T08:08:08.888Z');
+   * console.log(epoch.getJulianCenturiesPastJ2000());
+   * // 0.1838888888888889
+   */
+  getJulianCenturiesPastJ2000() {
+    return (this.julianTT - J2000) * JD_RECIPROCAL_4;
   }
 }

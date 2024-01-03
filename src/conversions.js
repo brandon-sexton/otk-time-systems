@@ -2,9 +2,9 @@ import {
   DAYS_TO_HOURS,
   HOURS_TO_DAYS,
   HOURS_TO_MINUTES,
-  JD_RECIPPROCAL_1,
-  JD_RECIPPROCAL_2,
-  JD_RECIPPROCAL_3,
+  JD_RECIPROCAL_1,
+  JD_RECIPROCAL_2,
+  JD_RECIPROCAL_3,
   MINUTES_TO_HOURS,
   MINUTES_TO_SECONDS,
   MJD_ZERO,
@@ -185,13 +185,13 @@ export function julianToCalendar(jd) {
   const f = jd1 - i;
   let b = i;
   if (i > 2299160) {
-    const a = Math.floor((i - 1867216.25) * JD_RECIPPROCAL_1);
+    const a = Math.floor((i - 1867216.25) * JD_RECIPROCAL_1);
     b = i + 1 + a - Math.floor(a * 0.25);
   }
   const c = b + 1524;
-  const d = Math.floor((c - 122.1) * JD_RECIPPROCAL_2);
+  const d = Math.floor((c - 122.1) * JD_RECIPROCAL_2);
   const e = Math.floor(365.25 * d);
-  const g = Math.floor((c - e) * JD_RECIPPROCAL_3);
+  const g = Math.floor((c - e) * JD_RECIPROCAL_3);
   const day = c - e + f - Math.floor(30.6001 * g);
   let month = g - 1;
   if (g > 13.5) {
