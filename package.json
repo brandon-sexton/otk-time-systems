@@ -1,6 +1,6 @@
 {
   "name": "time-systems",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "time utilities for various systems used in astrodynamics",
   "main": "index.js",
   "type": "module",

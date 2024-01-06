@@ -40,6 +40,32 @@ export class Epoch {
   }
 
   /**
+   * @static
+   * @param {number} julianTT - The Julian TT to use for instantiation
+   * @return {Epoch} The Epoch object.
+   * @example
+   * const epoch = Epoch.fromJulianTT(2458345.838888);
+   * console.log(epoch.toString());
+   * // '2018-08-08T08:08:08.888Z'
+   */
+  static fromJulianTT(julianTT) {
+    const ep = Object.create(Epoch.prototype);
+    ep.julianTT = julianTT;
+    return ep;
+  }
+
+  /**
+   * @return {Epoch} A copy of the Epoch object.
+   * @example
+   * const epoch = new Epoch('2018-08-08T08:08:08.888Z');
+   * console.log(epoch.copy().toString());
+   * // '2018-08-08T08:08:08.888Z'
+   */
+  copy() {
+    return Epoch.fromJulianTT(this.julianTT);
+  }
+
+  /**
    * @return {string} The equivalent ISO string.
    * @example
    * const epoch = new Epoch('2018-08-08T08:08:08.888Z');
@@ -66,8 +92,7 @@ export class Epoch {
    * // '2018-08-09T08:08:08.888Z'
    */
   plusDays(days) {
-    this.julianTT += days;
-    return this;
+    return Epoch.fromJulianTT(this.julianTT + days);
   }
 
   /**
