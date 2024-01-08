@@ -119,3 +119,8 @@ test('GMST', () => {
   const epoch = new Epoch('2022-12-19T12:00:00.000Z');
   expect(epoch.getGMST()).toBeCloseTo(degreesToRadians(268.0707472726), 6);
 });
+
+test('days past J2000', () => {
+  const epoch = new Epoch('2022-12-19T12:00:00.000Z');
+  expect(epoch.getDaysPastJ2000()).toBeCloseTo(8388.0);
+});

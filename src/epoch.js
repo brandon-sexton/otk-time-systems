@@ -10,7 +10,6 @@ import {degreesToRadians} from 'unit-conversions-js';
 /**
  * Epoch
  * @class Epoch
- * @extends Date
  * @param {string} isoString
  * @return {Epoch}
  * @example
