@@ -17,6 +17,7 @@ import {
   Epoch,
   julianTTtoUTC,
 } from 'time-systems';
+import {degreesToRadians} from 'unit-conversions-js';
 
 test('minutes to seconds', () => {
   expect(minutesToSeconds(1)).toBe(60, '1 minute should be 60 seconds');
@@ -112,4 +113,9 @@ test('epoch constructor', () => {
 test('epoch addition', () => {
   const epoch = new Epoch('2018-08-08T08:08:08.888Z');
   expect(epoch.plusDays(1).toString()).toBe('2018-08-09T08:08:08.888Z');
+});
+
+test('GMST', () => {
+  const epoch = new Epoch('2022-12-19T12:00:00.000Z');
+  expect(epoch.getGMST()).toBeCloseTo(degreesToRadians(268.0707472726), 6);
 });

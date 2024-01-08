@@ -3,8 +3,10 @@ import {
   julianToCalendar,
   julianUTCtoTT,
   julianTTtoUTC,
+  julianToMJD,
 } from './conversions';
-import {J2000, JD_RECIPROCAL_4} from './constants';
+import {J2000, JD_RECIPROCAL_4, MJD_ZERO} from './constants';
+import {degreesToRadians} from 'unit-conversions-js';
 /**
  * Epoch
  * @class Epoch
@@ -105,5 +107,24 @@ export class Epoch {
    */
   getJulianCenturiesPastJ2000() {
     return (this.julianTT - J2000) * JD_RECIPROCAL_4;
+  }
+
+  /**
+   * @method getGMST
+   * @return {number} The Greenwich Mean Sidereal Time in radians.
+   * @example
+   * const epoch = new Epoch('2018-08-08T08:08:08.888Z');
+   * console.log(epoch.getGMST());
+   * // 4.71238898038469
+   */
+  getGMST() {
+    const utc = julianToMJD(julianTTtoUTC(this.julianTT));
+    const decDay = utc % 1;
+    const j0 = utc + MJD_ZERO - decDay;
+    const j = (j0 - J2000) * JD_RECIPROCAL_4;
+    const theta0 = 100.4606184 + 36000.77004 * j + 0.000387933 * j * j;
+    const totalDeg = theta0 + 360.98564724 * decDay;
+    const normalizedDeg = totalDeg % 360;
+    return degreesToRadians(normalizedDeg);
   }
 }
