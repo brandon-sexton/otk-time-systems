@@ -110,6 +110,19 @@ export class Epoch {
   }
 
   /**
+   * @method getDaysPastJ2000
+   * @description Returns the number of days past J2000.
+   * @return {number} the number of days past J2000.
+   * @example
+   * const epoch = new Epoch('2018-08-08T08:08:08.888Z');
+   * console.log(epoch.getDaysPastJ2000());
+   * // 6713.838888888888
+   */
+  getDaysPastJ2000() {
+    return this.julianTT - J2000;
+  }
+
+  /**
    * @method getGMST
    * @return {number} The Greenwich Mean Sidereal Time in radians.
    * @example
