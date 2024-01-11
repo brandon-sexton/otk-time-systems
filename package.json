@@ -1,5 +1,5 @@
 {
-  "name": "time-systems",
+  "name": "otk-time-systems",
   "version": "0.1.4",
   "description": "time utilities for various systems used in astrodynamics",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brandon-sexton/time-systems.git"
+    "url": "git+https://github.com/brandon-sexton/otk-time-systems.git"
   },
   "keywords": [
     "time",
@@ -18,9 +18,9 @@
   "author": "Brandon Sexton",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/brandon-sexton/time-systems/issues"
+    "url": "https://github.com/brandon-sexton/otk-time-systems/issues"
   },
-  "homepage": "https://github.com/brandon-sexton/time-systems#readme",
+  "homepage": "https://github.com/brandon-sexton/otk-time-systems#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.23.7",
     "eslint": "^8.56.0",
@@ -28,6 +28,6 @@
     "jest": "^29.7.0"
   },
   "dependencies": {
-    "unit-conversions-js": "^0.3.1"
+    "otk-unit-conversions": "^0.1.0"
   }
 }
