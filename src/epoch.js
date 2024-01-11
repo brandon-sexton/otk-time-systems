@@ -6,7 +6,7 @@ import {
   julianToMJD,
 } from './conversions';
 import {J2000, JD_RECIPROCAL_4, MJD_ZERO} from './constants';
-import {degreesToRadians} from 'unit-conversions-js';
+import {degreesToRadians} from 'otk-unit-conversions';
 /**
  * Epoch
  * @class Epoch
