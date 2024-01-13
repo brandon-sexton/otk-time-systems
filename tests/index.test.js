@@ -16,8 +16,8 @@ import {
   secondsToMinutes,
   Epoch,
   julianTTtoUTC,
-} from 'time-systems';
-import {degreesToRadians} from 'unit-conversions-js';
+} from 'otk-time-systems';
+import {degreesToRadians} from 'otk-unit-conversions';
 
 test('minutes to seconds', () => {
   expect(minutesToSeconds(1)).toBe(60, '1 minute should be 60 seconds');

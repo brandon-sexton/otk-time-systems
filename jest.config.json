@@ -3,6 +3,6 @@
     "^.+\\.js$": "babel-jest"
   },
   "transformIgnorePatterns": [
-    "node_modules/(?!unit-conversions-js/)"
+    "node_modules/(?!otk-unit-conversions/)"
   ]
 }
